@@ -5,7 +5,7 @@ const apiKey =
 
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 
-function creaCard(immagine, title, descrizione, id) {
+function createCard(image, title, description, id) {
   const col = document.createElement("div");
   col.className = "col-6 col-md-3";
 
@@ -15,7 +15,7 @@ function creaCard(immagine, title, descrizione, id) {
 
   const img = document.createElement("img");
   img.className = "card-img-top object-fit-cover";
-  img.src = immagine;
+  img.src = image;
   img.style.height = "60%";
 
   const body = document.createElement("div");
@@ -27,26 +27,29 @@ function creaCard(immagine, title, descrizione, id) {
 
   const p = document.createElement("p");
   p.className = "card-text";
-  p.textContent = descrizione;
+  p.textContent = description;
 
-  const btnDettaglio = document.createElement("a");
-  btnDettaglio.href = `./dettagli.html?idProdotto=${id}`;
-  btnDettaglio.className = "btn btn-primary me-1";
-  btnDettaglio.innerText = "Info";
+  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "Info", "btn-primary");
+  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "Modifica", "btn-success");
 
-  const btnModifica = document.createElement("a");
-  btnModifica.href = `./backoffice.html?idProdotto=${id}`;
-  btnModifica.className = "btn btn-success me-1";
-  btnModifica.innerText = "Modifica";
+  appendElements(body, [h5, p, btnDettaglio, btnModifica]);
+  appendElements(card, [img, body]);
+  appendElements(col, [card]);
+  appendElements(row, [col]);
+}
 
-  row.appendChild(col);
-  col.appendChild(card);
-  card.appendChild(img);
-  card.appendChild(body);
-  body.appendChild(h5);
-  body.appendChild(p);
-  body.appendChild(btnDettaglio);
-  body.appendChild(btnModifica);
+function createButton(link, text, className) {
+  const btn = document.createElement("a");
+  btn.href = link;
+  btn.className = `btn ${className} me-1`;
+  btn.innerText = text;
+  return btn;
+}
+
+function appendElements(parent, children) {
+  children.forEach((child) => {
+    parent.appendChild(child);
+  });
 }
 
 fetch(url, {
@@ -57,24 +60,16 @@ fetch(url, {
   },
 })
   .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      if (response.status === 400) {
-        throw new Error("400 - Errore lato client");
-      }
-      if (response.status === 404) {
-        throw new Error("404 - Dato non trovato");
-      }
-      if (response.status === 500) {
-        throw new Error("500 - Errore lato server");
-      }
-      throw new Error("Errore nel reperimento dati");
+    if (!response.ok) {
+      throw new Error("Errore durante il recupero dei dati");
     }
+    return response.json();
   })
   .then((newAppointment) => {
     newAppointment.forEach((oggetto) => {
-      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id);
+      createCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id);
     });
   })
-  .catch((err) => console.log(err));
+  .catch((error) => {
+    console.error("Errore:", error);
+  });

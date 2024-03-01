@@ -11,7 +11,6 @@ const prezzo = document.getElementById("prezzo");
 
 const id = new URLSearchParams(window.location.search).get("idProdotto");
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////qua siamo nella modalità modifica
 if (id !== null) {
   btnSubmit.className = "btn btn-success";
   btnSubmit.textContent = "Modifica";
@@ -53,7 +52,6 @@ if (id !== null) {
     putFetch(id);
   });
   btnSubmit.onclick = function () {};
-  ////////////////////////////////////////modalità creazione
 } else {
   btnSubmit.className = "btn btn-primary";
   btnSubmit.textContent = "Submit";
