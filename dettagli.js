@@ -1,4 +1,4 @@
-const id=new URLSearchParams(window.location.search).get("idProdotto")
+const id = new URLSearchParams(window.location.search).get("idProdotto");
 
 const container = document.getElementsByClassName("container")[0];
 
@@ -13,7 +13,7 @@ function crea(src, title, descrizione, prezzo) {
 const apiKey =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxZDNhZDRjNTllYzAwMTk5MGQ4ZGYiLCJpYXQiOjE3MDkyOTg2MDUsImV4cCI6MTcxMDUwODIwNX0.mb1tywt7mUK6KjJ7LSC14VY6TgMaADn0jFNfPfzBsKI";
 
-const url = "https://striveschool-api.herokuapp.com/api/product/"+id;
+const url = "https://striveschool-api.herokuapp.com/api/product/" + id;
 
 fetch(url, {
   method: "GET", // è come scrivere method: method,
@@ -39,9 +39,6 @@ fetch(url, {
     }
   })
   .then((product) => {
-
-    
-    crea( product.imageUrl, product.name, product.description,product.price) ;
-    
+    crea(product.imageUrl, product.name, product.description, product.price + " €");
   })
   .catch((err) => console.log(err));

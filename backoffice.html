@@ -12,10 +12,56 @@
         padding-top: 20px;
         padding-bottom: 20px;
       }
+      h1 {
+        text-align: center;
+        font-family: "Dancing Script", cursive;
+        font-size: 60px;
+      }
+      #p1 {
+        font-family: "Josefin Sans", sans-serif;
+        text-align: center;
+      }
+      p {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+      }
+      #a1 {
+        font-family: "Dancing Script", cursive;
+        font-size: 40px;
+        border: 1px solid rgba(128, 128, 128, 0.57);
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      }
+      .container-fluid {
+        justify-content: center !important;
+      }
+      #btn1 {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        opacity: 0.7;
+      }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Yanone+Kaffeesatz:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BackOffice</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,13 +71,16 @@
   </head>
 
   <body data-bs-theme="light">
-    <nav class="navbar bg-body-primary">
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd">
       <div class="container-fluid">
-        <a class="navbar-brand" href="./index.html">Homepage</a>
+        <a class="navbar-brand" id="a1" href="./index.html">Homepage</a>
       </div>
     </nav>
     <div class="container">
-      <h1 style="text-align: center; pb-3;">Backoffice</h1>
+      <h1 style="text-align: center, pb-3">Backoffice</h1>
+      <hr />
+      <p id="p1">The world of spearfishing</p>
+
       <form>
         <div class="mb-3">
           <label for="img" class="form-label">Immagine</label>
@@ -53,7 +102,7 @@
           <label for="prezzo" class="form-label">Prezzo</label>
           <input type="text" class="form-control" id="prezzo" placeholder="inserisci prezzo" required />
         </div>
-        <button type="submit" class="btn btn-primary w-100">Submit</button>
+        <button type="submit" class="btn btn-primary w-100" id="btn1">Submit</button>
       </form>
     </div>
     <script
