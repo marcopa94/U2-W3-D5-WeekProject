@@ -1,5 +1,5 @@
 const apiKey =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOWVlMTRjNTllYzAwMTk5MGQ3MDIiLCJpYXQiOjE3MDkzMDk3MzUsImV4cCI6MTcxMDUxOTMzNX0.QT7zRIEcb8YiXORPdVV4Ol5mfyXZnpw9L6-fT9HdqYQ";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWUxOWVlMTRjNTllYzAwMTk5MGQ3MDIiLCJpYXQiOjE3MDkzMTM3MzksImV4cCI6MTcxMDUyMzMzOX0.h7NJTgo6t6oP4mR1U38EJS-UVWziQlzQReNthmJLvOM";
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 const form = document.querySelector("form");
 form.addEventListener("submit", function (event) {
@@ -47,7 +47,7 @@ function postData() {
       }
     })
     .then((newAppointment) => {
-      alert("prodotto inserito con successo ");
+      alert("Il prodotto è stata inserita con successo ");
       e.target.reset();
     })
     .catch((err) => console.log(err));
