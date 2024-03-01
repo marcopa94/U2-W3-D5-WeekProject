@@ -29,6 +29,10 @@ function createCard(image, title, description, id) {
   p.className = "card-text";
   p.textContent = description;
 
+  /*   const p4 = document.createElement("p");
+  p4.className = "card-text";
+  p4.textContent = price; */
+
   const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "Info", "btn-primary");
   const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "Modifica", "btn-success");
 
