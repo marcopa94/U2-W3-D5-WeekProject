@@ -5,17 +5,17 @@ const apiKey =
 
 const url = "https://striveschool-api.herokuapp.com/api/product/";
 
-function createCard(image, title, description, id) {
+function creaCard(immagine, title, descrizione, id) {
   const col = document.createElement("div");
   col.className = "col-6 col-md-3";
 
   const card = document.createElement("div");
   card.className = "card";
-  card.style.height = "26rem";
+  card.style.height = "22rem";
 
   const img = document.createElement("img");
   img.className = "card-img-top object-fit-cover";
-  img.src = image;
+  img.src = immagine;
   img.style.height = "60%";
 
   const body = document.createElement("div");
@@ -27,7 +27,7 @@ function createCard(image, title, description, id) {
 
   const p = document.createElement("p");
   p.className = "card-text";
-  p.textContent = description;
+  p.textContent = descrizione;
 
   const btnDettaglio = document.createElement("a");
   btnDettaglio.href = `./dettagli.html?idProdotto=${id}`;
@@ -35,7 +35,7 @@ function createCard(image, title, description, id) {
   btnDettaglio.innerText = "Info";
 
   const btnModifica = document.createElement("a");
-  btnModifica.href = "./backoffice.html";
+  btnModifica.href = `./backoffice.html?idProdotto=${id}`;
   btnModifica.className = "btn btn-success me-1";
   btnModifica.innerText = "Modifica";
 
@@ -57,16 +57,24 @@ fetch(url, {
   },
 })
   .then((response) => {
-    if (!response.ok) {
-      throw new Error("Errore durante il recupero dei dati");
+    if (response.ok) {
+      return response.json();
+    } else {
+      if (response.status === 400) {
+        throw new Error("400 - Errore lato client");
+      }
+      if (response.status === 404) {
+        throw new Error("404 - Dato non trovato");
+      }
+      if (response.status === 500) {
+        throw new Error("500 - Errore lato server");
+      }
+      throw new Error("Errore nel reperimento dati");
     }
-    return response.json();
   })
-  .then((data) => {
-    data.forEach((item) => {
-      createCard(item.imageUrl, item.name, item.description, item._id);
+  .then((newAppointment) => {
+    newAppointment.forEach((oggetto) => {
+      creaCard(oggetto.imageUrl, oggetto.name, oggetto.description, oggetto._id);
     });
   })
-  .catch((error) => {
-    console.error("Errore:", error);
-  });
+  .catch((err) => console.log(err));
