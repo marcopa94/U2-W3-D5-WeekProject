@@ -1,3 +1,9 @@
+let prodotti = [];
+const titolo = document.createElement("p");
+const lista = document.createElement("li");
+const carrello = document.getElementById("carrello");
+const btn5 = document.getElementById("btn5");
+
 const row = document.querySelector(".row");
 
 const bearerToken =
@@ -33,7 +39,7 @@ function fetchProducts(url, token) {
 
 function createCard(image, title, description, id) {
   const col = document.createElement("div");
-  col.className = "col-6 col-md-3";
+  col.className = "col-12 col-xs-12 col-md-6 col-xl-3";
 
   const card = document.createElement("div");
   card.className = "card";
@@ -55,12 +61,34 @@ function createCard(image, title, description, id) {
   p.className = "card-text";
   p.textContent = description;
 
-  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "Info", "btn-primary");
-  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "Modifica", "btn-success");
-  const buy = createButton(`./backoffice.html?idProdotto=${id}`, "Buy", "btn-danger");
+  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "Info", "btn-primary", "btn-shadow");
+  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "Modifica", "btn-success", "btn-shadow");
+  const buy = createButton(`./backoffice.html?idProdotto=${id}`, "Buy", "btn-warning", "btn-shadow");
+
   buy.addEventListener("click", (event) => {
     event.preventDefault();
     addToCart(title);
+  });
+  buy.addEventListener("click", () => {
+    prodotti.push(`${title}`);
+    console.log(prodotti);
+    const btnDel = document.createElement("button");
+    btnDel.innerText = "remove";
+    btnDel.classList.add("btn", "btn-danger");
+    const lista = document.createElement("li");
+    /*  const lista2 = document.createElement("li"); */
+    prodotti.forEach((elemento) => {
+      carrello.appendChild(lista);
+
+      lista.innerText = `${title}   ${description}`;
+    });
+    /*  btnDel.addEventListener("click", () => {
+      btnDel.;
+    }); */
+    carrello.appendChild(lista);
+    carrello.appendChild(btnDel);
+
+    localStorage.setItem(`${title}`, JSON.stringify(`${description}`));
   });
 
   function addToCart(title) {
@@ -85,3 +113,8 @@ function appendElements(parent, children) {
     parent.appendChild(child);
   });
 }
+var myCarousel = document.querySelector("#carouselExampleIndicators");
+var carousel = new bootstrap.Carousel(myCarousel, {
+  interval: 2000,
+  wrap: true,
+});

@@ -143,13 +143,7 @@ function putFetch(id) {
       }
     })
     .then((updatedProduct) => {
-      console.log(updatedProduct);
-      document.getElementById("Titolo").value = updatedProduct.name;
-      document.getElementById("Descrizione").value = updatedProduct.description;
-      document.getElementById("brand").value = updatedProduct.brand;
-      document.getElementById("img").value = updatedProduct.imageUrl;
-      document.getElementById("prezzo").value = updatedProduct.price;
-      alert("il prodotto è stato modificato correttamente");
+      alert("Prodotto aggiornato con successo");
     })
     .catch((err) => console.log(err));
 }
@@ -180,7 +174,7 @@ function deleteFetch(id) {
     })
     .then(() => {
       alert("Prodotto eliminato con successo");
-      window.location.href = "./index.html"; // Reindirizza alla homepage dopo la cancellazione
+      window.location.href = "./index.html"; // Redirect dopo eliminazione
     })
     .catch((err) => console.log(err));
 }

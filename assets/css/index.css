@@ -104,3 +104,17 @@ nav {
   opacity: 0.7;
   letter-spacing: 2px;
 }
+.dropdown-menu {
+  width: 200px;
+  font-size: 18px;
+}
+.btn-shadow {
+  box-shadow: 0 12px 16px 0 rgba(110, 110, 110, 0.24), 0 17px 50px 0 rgba(142, 142, 142, 0.19);
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+#img1 {
+  height: 300px;
+}
