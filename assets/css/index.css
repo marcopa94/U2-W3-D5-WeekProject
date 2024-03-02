@@ -1,0 +1,106 @@
+.card {
+  background-color: rgb(243, 243, 243) !important;
+  padding: 3px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 100px !important;
+}
+
+h2 {
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-shadow: #e3f2fd;
+}
+
+p {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+#a2 {
+  opacity: 0.5;
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.57);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#a1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.57);
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+p {
+  text-align: right;
+}
+h5 {
+  text-align: center;
+  padding-bottom: 15px;
+}
+.container-fluid {
+  justify-content: center !important;
+}
+
+#btn1 {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  opacity: 0.7;
+}
+#btn5 {
+  border-radius: 10px;
+  opacity: 0.8;
+}
+#logo {
+  width: 80px;
+}
+.drop {
+  display: flex;
+}
+nav {
+  border-bottom: 1px solid rgb(134, 133, 133);
+}
+#link1 {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 20px;
+  box-shadow: 0 12px 16px 0 rgba(110, 110, 110, 0.24), 0 17px 50px 0 rgba(142, 142, 142, 0.19);
+}
+.footer {
+  display: flex;
+  margin-top: 10%;
+  background-color: black;
+
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.foot1 {
+  display: flex;
+}
+.foot2 {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.foot1 p {
+  font-size: 20px;
+  padding-top: 18px;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+.foot2 p {
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 2px;
+}

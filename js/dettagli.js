@@ -7,8 +7,14 @@ function crea(src, title, descrizione, prezzo) {
     <h1>${title}</h1>
     <p>${descrizione}</p>
     <p>${prezzo}</p>
+    <button class="btn btn-primary" id="btnBack">Indietro</button>
   `;
   container.innerHTML = html;
+
+  const btnBack = document.getElementById("btnBack");
+  btnBack.addEventListener("click", () => {
+    window.history.back();
+  });
 }
 
 const apiKey =

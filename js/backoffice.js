@@ -103,7 +103,7 @@ function postData() {
       }
     })
     .then((newAppointment) => {
-      alert("Appuntamento con id: " + " è stato creato correttamente");
+      alert("Il prodotto : " + titolo.value + " è stato creato correttamente");
       form.reset();
     })
     .catch((err) => console.log(err));
