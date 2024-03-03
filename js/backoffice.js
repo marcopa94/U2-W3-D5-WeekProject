@@ -56,8 +56,14 @@ if (id !== null) {
 
   btnSubmit1.addEventListener("click", function (event) {
     event.preventDefault();
-    deleteFetch(id);
+
+    confermaEliminazione();
   });
+  function confermaEliminazione(id) {
+    if (confirm("Sei sicuro di voler eliminare questo elemento?")) {
+      deleteFetch(id);
+    }
+  }
 
   btnSubmit.onclick = function () {};
 } else {
@@ -174,7 +180,7 @@ function deleteFetch(id) {
     })
     .then(() => {
       alert("Prodotto eliminato con successo");
-      window.location.href = "./index.html"; // Redirect dopo eliminazione
+      window.location.href = "./index.html";
     })
     .catch((err) => console.log(err));
 }
