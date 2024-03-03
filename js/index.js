@@ -1,5 +1,6 @@
 let prodotti = [];
 const titolo = document.createElement("p");
+const testocarrello = document.createElement("p");
 const lista = document.createElement("li");
 const carrello = document.getElementById("carrello");
 const btn5 = document.getElementById("btn5");
@@ -62,9 +63,14 @@ function createCard(image, title, description, id) {
   p.className = "card-text";
   p.textContent = description;
 
-  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "INFO", "btn-outline-secondary", "btn-shadow");
-  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "EDIT", "btn-outline-secondary", "btn-shadow");
-  const buy = createButton(`./backoffice.html?idProdotto=${id}`, "ADD TO CART", "btn-outline-secondary", "btn-shadow");
+  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "INFO", "btn btn-outline-info", "btn-shadow");
+  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "EDIT", "btn btn-outline-info", "btn-shadow");
+  const buy = createButton(
+    `./backoffice.html?idProdotto=${id}`,
+    "ADD TO CART",
+    "btn btn-outline-success",
+    "btn-shadow"
+  );
   buy.classList.add("btnbuy");
 
   buy.addEventListener("click", (event) => {
@@ -89,6 +95,10 @@ function createCard(image, title, description, id) {
     }); */
     carrello.appendChild(lista);
     carrello.appendChild(btnDel);
+    btnDel.addEventListener("click", () => {
+      carrello.removeChild(lista);
+      carrello.removeChild(btnDel);
+    });
 
     localStorage.setItem(`${title}`, JSON.stringify(`${description}`));
   });

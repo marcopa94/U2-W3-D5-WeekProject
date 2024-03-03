@@ -138,7 +138,7 @@ nav {
   box-shadow: 0 12px 16px 0 rgba(110, 110, 110, 0.24), 0 17px 50px 0 rgba(142, 142, 142, 0.19);
 }
 .card:hover {
-  transform: scale(1.05);
+  transition: width 0.2s ease-in-out;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 #img1 {
@@ -195,5 +195,13 @@ h4 {
 header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 1000;
 }
+.dropdown-menu {
+  width: 357px;
+  font-size: 18px;
+}
+/* .carrello {
+  text-align: center;
+  letter-spacing: 3px;
+} */

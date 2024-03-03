@@ -56,9 +56,9 @@ if (id !== null) {
 
   btnSubmit1.addEventListener("click", function (event) {
     event.preventDefault();
-
-    confermaEliminazione();
+    confermaEliminazione(id);
   });
+
   function confermaEliminazione(id) {
     if (confirm("Sei sicuro di voler eliminare questo elemento?")) {
       deleteFetch(id);
