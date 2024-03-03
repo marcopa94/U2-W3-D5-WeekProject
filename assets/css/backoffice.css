@@ -35,8 +35,16 @@ p {
   justify-content: center !important;
 }
 #btn1 {
+  margin-top: 20px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  opacity: 0.7;
+
+  width: 100px !important;
+}
+#btn2 {
+  margin-top: 20px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  float: right;
+  width: 80px !important;
 }
 #logo {
   width: 80px;
@@ -46,7 +54,7 @@ p {
 }
 #link1 {
   border: 1px solid rgb(200, 200, 200);
-  border-radius: 20px;
+  border-radius: 5px;
   box-shadow: 0 12px 16px 0 rgba(110, 110, 110, 0.24), 0 17px 50px 0 rgba(142, 142, 142, 0.19);
 }
 .footer {
@@ -77,5 +85,11 @@ p {
 .foot2 p {
   font-size: 13px;
   opacity: 0.7;
+  letter-spacing: 2px;
+}
+.navbar-nav {
+  gap: 20px;
+  font-weight: 500;
+  font-size: 13px;
   letter-spacing: 2px;
 }

@@ -38,22 +38,23 @@ function fetchProducts(url, token) {
 }
 
 function createCard(image, title, description, id) {
+  const cont = document.createElement("div");
   const col = document.createElement("div");
   col.className = "col-12 col-xs-12 col-md-6 col-xl-3";
 
   const card = document.createElement("div");
   card.className = "card";
-  card.style.height = "25rem";
+  card.style.height = "30";
 
   const img = document.createElement("img");
   img.className = "card-img-top object-fit-cover";
   img.src = image;
-  img.style.height = "60%";
+  /*   img.style.height = "60%"; */
 
   const body = document.createElement("div");
   body.className = "card-body";
 
-  const h5 = document.createElement("h5");
+  const h5 = document.createElement("h4");
   h5.className = "card-title";
   h5.textContent = title;
 
@@ -61,9 +62,10 @@ function createCard(image, title, description, id) {
   p.className = "card-text";
   p.textContent = description;
 
-  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "Info", "btn-primary", "btn-shadow");
-  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "Modifica", "btn-success", "btn-shadow");
-  const buy = createButton(`./backoffice.html?idProdotto=${id}`, "Buy", "btn-warning", "btn-shadow");
+  const btnDettaglio = createButton(`./dettagli.html?idProdotto=${id}`, "INFO", "btn-outline-secondary", "btn-shadow");
+  const btnModifica = createButton(`./backoffice.html?idProdotto=${id}`, "EDIT", "btn-outline-secondary", "btn-shadow");
+  const buy = createButton(`./backoffice.html?idProdotto=${id}`, "ADD TO CART", "btn-outline-secondary", "btn-shadow");
+  buy.classList.add("btnbuy");
 
   buy.addEventListener("click", (event) => {
     event.preventDefault();

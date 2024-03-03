@@ -94,7 +94,7 @@ function postData() {
           throw new Error("400 - Errore lato client");
         }
         if (response.status === 404) {
-          throw new Error("404 - Dato non trovato");
+          throw new Error("404 - Not found");
         }
         if (response.status === 500) {
           throw new Error("500 - Errore lato server");
@@ -134,7 +134,7 @@ function putFetch(id) {
           throw new Error("400 - Errore lato client");
         }
         if (response.status === 404) {
-          throw new Error("404 - Dato non trovato");
+          throw new Error("404 - Not found");
         }
         if (response.status === 500) {
           throw new Error("500 - Errore lato server");
@@ -164,7 +164,7 @@ function deleteFetch(id) {
           throw new Error("400 - Errore lato client");
         }
         if (response.status === 404) {
-          throw new Error("404 - Dato non trovato");
+          throw new Error("404 - Not found");
         }
         if (response.status === 500) {
           throw new Error("500 - Errore lato server");
